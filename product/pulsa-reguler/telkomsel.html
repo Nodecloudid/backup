@@ -1,1 +1,240 @@
-tes
+
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pulsa Reguler" />
+    <meta name="author" content="Hope Store" />
+    <link rel="shortcut icon" href="https://i.ibb.co/jvXw2WZ/20230516-090156-0000.png" type="image/x-icon" />
+    <meta content='#007FFF' name='theme-color'/>
+    <base target="_blank"/>
+    <title>Pulsa Reguler Telkomsel</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins');
+
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-image: url('https://i.ibb.co/D4zf88L/20220109-082757.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .navbar {
+      background-color: #007FFF;
+      color: white;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .navbar-nav {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-item {
+      margin-right: 10px;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      background-color: #004b8d;
+    }
+
+    .d-sm-flex {
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="https://hope-store.me/">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://hope-store.me/">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://hope-store.me/">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>Pesanan Produk</h1>
+    <form id="order-form">
+      <div class="form-group">
+        <label for="phone">Nomor Telepon:</label>
+        <input type="text" id="phone" name="phone">
+        <span class="error-message" id="phone-error"></span>
+      </div>
+      <div class="form-group">
+        <label for="nominal">Nominal:</label>
+        <select id="nominal" name="nominal">
+          <option value="" disabled selected>Pilih Nominal</option>
+          <option value="Rp 5.000">Pulsa Reguler 5.000 Harga Rp 6.500</option>
+          <option value="Rp 10.000">Pulsa Reguler 10.000 Harga Rp 11.500</option>
+          <option value="Rp 15.000">Pulsa Reguler 15.000 Harga Rp 16.500</option>
+          <option value="Rp 20.000">Pulsa Reguler 20.000 Harga Rp 21.500</option>
+          <option value="Rp 25.000">Pulsa Reguler 25.000 Harga Rp 26.500</option>
+          <option value="Rp 30.000">Pulsa Reguler 30.000 Harga Rp 31.500</option>
+          <option value="Rp 35.000">Pulsa Reguler 35.000 Harga Rp 36.500</option>
+          <option value="Rp 40.000">Pulsa Reguler 40.000 Harga Rp 41.500</option>
+          <option value="Rp 45.000">Pulsa Reguler 45.000 Harga Rp 46.500</option>
+          <option value="Rp 50.000">Pulsa Reguler 50.000 Harga Rp 51.500</option>
+          <option value="Rp 55.000">Pulsa Reguler 55.000 Harga Rp 56.500</option>
+          <option value="Rp 60.000">Pulsa Reguler 60.000 Harga Rp 61.500</option>
+          <option value="Rp 65.000">Pulsa Reguler 65.000 Harga Rp 66.500</option>
+          <option value="Rp 70.000">Pulsa Reguler 70.000 Harga Rp 71.500</option>
+          <option value="Rp 75.000">Pulsa Reguler 75.000 Harga Rp 76.500</option>
+          <option value="Rp 80.000">Pulsa Reguler 80.000 Harga Rp 81.500</option>
+          <option value="Rp 85.000">Pulsa Reguler 85.000 Harga Rp 86.500</option>
+          <option value="Rp 90.000">Pulsa Reguler 90.000 Harga Rp 91.500</option>
+          <option value="Rp 95.000">Pulsa Reguler 95.000 Harga Rp 96.500</option>
+          <option value="Rp 100.000">Pulsa Reguler 100.000 Harga Rp 100.000</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="payment">Pembayaran:</label>
+        <select id="payment" name="payment">  
+          <option value="" disabled selected>Pilih Pembayaran</option>  
+          <option value="QRIS, (All Payment)">QRIS, (All Payment)</option>
+          <option value="OVO, 082264865477 A/N M****L">OVO, 082264865477 A/N M****L</option>
+          <option value="DANA, 082264865477 A/N M****L">DANA, 082264865477 A/N M****L</option>
+          <option value="GOPAY, 082264865477 A/N M****L">GOPAY, 082264865477 A/N M****L</option>
+          <option value="SHOPPE_PAY, 082264865477 A/N M****L">SHOPPE_PAY, 082264865477 A/N M****L</option>
+        </select>
+      </div>
+     <div class="form-group">      
+    <div id="nota-container">
+    <h2>Nota Pesanan</h2>
+        <p>Nomor Telepon: <span id="nota-phone"></span></p>
+        <p>Nominal: <span id="nota-nominal"></span></p>
+        <p>Pembayaran: <span id="nota-payment"></span></p>
+        <button type="submit" name="submit" class="btn btn-primary">Lanjutkan</button>
+        <small class="text-success">Silahkan lanjutkan pemesanan dengan mengklik tombol "Lanjutkan".</small>
+        </div>
+        <small class="text-success">Dengan membeli berarti anda telah menyetujui syarat & ketentuan layanan kami.</small>
+        <button id="nota-continue-btn" class="btn btn-primary" style="background-color: yellow;">BELI</button>
+  </form>
+</div>
+<script>
+  // Mendengarkan peristiwa submit form
+  document.getElementById("order-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Mencegah pengiriman form standar
+
+    // Menghapus pesan error sebelum validasi
+    document.getElementById("phone-error").textContent = "";
+
+    // Mengambil nilai input
+    var phone = document.getElementById("phone").value;
+    var nominal = document.getElementById("nominal").value;
+    var payment = document.getElementById("payment").value;
+
+    // Memeriksa apakah semua data telah diisi
+    if (phone === "" || nominal === "" || payment === "") {
+      document.getElementById("phone-error").textContent = "Mohon lengkapi semua data.";
+      return;
+    }
+
+    // Menampilkan nota pesanan
+    document.getElementById("nota-phone").textContent = phone;
+    document.getElementById("nota-nominal").textContent = nominal;
+    document.getElementById("nota-payment").textContent = payment;
+    document.getElementById("nota-container").style.display = "block";
+  });
+
+  // Mendengarkan peristiwa klik tombol "Lanjutkan"
+  document.getElementById("nota-continue-btn").addEventListener("click", function() {
+    // Membangun URL WhatsApp dengan parameter yang diisi dari form
+    var phone = document.getElementById("phone").value;
+    var nominal = document.getElementById("nominal").value
+    var payment = document.getElementById("payment").value;
+
+    // Memeriksa apakah semua data telah diisi
+    if (phone === "" || nominal === "" || payment === "") {
+      document.getElementById("phone-error").textContent = "Mohon lengkapi semua data.";
+      return;
+    }
+
+    // Mengarahkan pengguna ke URL WhatsApp
+    var url = "https://wa.me/6282264865477?text=*Order%20Pulsa%20Reguler%20Telkomsel*%0A%0ANomor%20Telepon%3A%20" +
+      encodeURIComponent(phone) + "%0AOrder%3A%20" +
+      encodeURIComponent(nominal) + "%0APembayaran%3A%20" +
+      encodeURIComponent(payment);
+
+    window.location.href = url;
+  });
+</script>
+</body>
+</html>
+
