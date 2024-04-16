@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Harga</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Daftar Harga</h1>
+        <div class="filter-container">
+            <label for="kategori">Kategori:</label>
+            <select id="kategori">
+                <option value="semua">Semua</option>
+                <option value="pulsa">Pulsa & PРОВ</option>
+                <option value="game">Game & Streaming</option>
+                <option value="sosmed">Sosmed</option>
+            </select>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kode</th>
+                        <th>Produk</th>
+                        <th>Catatan</th>
+                        <th>Harga</th>
+                        <th>Member</th>
+                        <th>Reseller</th>
+                    </tr>
+                </thead>
+                <tbody id="data-produk">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
