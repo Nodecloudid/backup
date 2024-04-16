@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Top Up Game" />
+    <meta name="description" content="Top Up Games" />
     <meta name="author" content="Velzz Store" />
     <link rel="shortcut icon" href="https://i.ibb.co/jvXw2WZ/20230516-090156-0000.png" type="image/x-icon" />
     <meta content='#007FFF' name='theme-color'/>
@@ -157,11 +157,11 @@
         <p>User ID: <span id="nota-id"></span></p>
         <p>Produk: <span id="nota-produk"></span></p>
         <p>Pembayaran: <span id="nota-payment"></span></p>
-        <button type="submit" name="submit" class="btn btn-primary">ORDER</button>
+        <button type="submit" name="submit" class="btn btn-primary">Beli</button>
         <small class="text-success">Silahkan lanjutkan pemesanan dengan mengklik tombol "Lanjutkan".</small>
         </div>
-        <small class="text-success">Konfirmasi pembelian akan diarahkan secara manual ke WhatsApp Admin.</small>
-        <button id="nota-continue-btn" class="btn btn-primary">Lanjutkan</button>
+        <small class="text-success">Dengan membeli berarti anda telah menyetujui syarat & ketentuan layanan kami.</small>
+        <button id="nota-continue-btn" class="btn btn-primary" style="background-color: yellow;">Lanjutkan</button>
   </form>
 </div>
 <script>
@@ -173,8 +173,8 @@
     document.getElementById("id-error").textContent = "";
 
     // Mengambil nilai input
-    var phone = document.getElementById("id").value;
-    var nominal = document.getElementById("produk").value;
+    var id = document.getElementById("id").value;
+    var produk = document.getElementById("produk").value;
     var payment = document.getElementById("payment").value;
 
     // Memeriksa apakah semua data telah diisi
@@ -184,8 +184,8 @@
     }
 
     // Menampilkan nota pesanan
-    document.getElementById("nota-id").textContent = phone;
-    document.getElementById("nota-produk").textContent = nominal;
+    document.getElementById("nota-id").textContent = id;
+    document.getElementById("nota-produk").textContent = produk;
     document.getElementById("nota-payment").textContent = payment;
     document.getElementById("nota-container").style.display = "block";
   });
@@ -193,8 +193,8 @@
   // Mendengarkan peristiwa klik tombol "Lanjutkan"
   document.getElementById("nota-continue-btn").addEventListener("click", function() {
     // Membangun URL WhatsApp dengan parameter yang diisi dari form
-    var phone = document.getElementById("id").value;
-    var nominal = document.getElementById("produk").value
+    var id = document.getElementById("id").value;
+    var produk = document.getElementById("produk").value
     var payment = document.getElementById("payment").value;
 
     // Memeriksa apakah semua data telah diisi
@@ -204,7 +204,7 @@
     }
 
     // Mengarahkan pengguna ke URL WhatsApp
-    var url = "https://wa.me/6282264865477?text=*Order%20TopUp%20Free%20Fire*%0A%0AUser ID%3A%20" +
+    var url = "https://wa.me/6282264865477?text=*Order%20Free%20Fire*%0A%0AUser%20ID%3A%20" +
       encodeURIComponent(id) + "%0AProduk%3A%20" +
       encodeURIComponent(produk) + "%0APembayaran%3A%20" +
       encodeURIComponent(payment);
