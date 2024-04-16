@@ -11,7 +11,7 @@
         <h1>Daftar Harga</h1>
         <div class="filter-container">
             <label for="kategori">Kategori:</label>
-            <select id="kategori">
+            <select id="kategori" onchange="filterDataProduk()">
                 <option value="semua">Semua</option>
                 <option value="pulsa">Pulsa & PРОВ</option>
                 <option value="game">Game & Streaming</option>
@@ -30,8 +30,7 @@
                         <th>Reseller</th>
                     </tr>
                 </thead>
-                <tbody id="data-produk">
-                    </tbody>
+                <tbody id="data-produk"></tbody>
             </table>
         </div>
     </div>
