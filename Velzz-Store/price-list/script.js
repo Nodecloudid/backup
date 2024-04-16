@@ -34,8 +34,8 @@ const dataProdukElement = document.getElementById("data-produk");
 function filterDataProduk() {
     const kategoriDipilih = document.getElementById("kategori").value;
 
-    dataProdukElement.innerHTML = "";
+    dataProdukElement.innerHTML = ""; // Kosongkan tabel sebelum filter
 
     dataProduk.forEach(produk => {
         if (kategoriDipilih === "semua" || kategoriDipilih === produk.kategori) {
-            const row = dataProdukElement.insertRow();
+            const row =
