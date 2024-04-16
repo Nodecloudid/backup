@@ -1,1 +1,216 @@
-tes
+
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Token PLN" />
+    <meta name="author" content="Velzz Store" />
+    <link rel="shortcut icon" href="https://i.ibb.co/jvXw2WZ/20230516-090156-0000.png" type="image/x-icon" />
+    <meta content='#007FFF' name='theme-color'/>
+    <base target="_blank"/>
+    <title>Token PLN</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins');
+
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-image: url('https://c.top4top.io/p_302708wqa1.gif');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .navbar {
+      background-color: #007FFF;
+      color: white;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .navbar-nav {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-item {
+      margin-right: 10px;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      background-color: #004b8d;
+    }
+
+    .d-sm-flex {
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="https://nodecloudid.github.io">HOME</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>Pesanan Produk</h1>
+    <form id="order-form">
+      <div class="form-group">
+        <label for="nomor">Nomor Meter:</label>
+        <input type="text" id="nomor" name="nomor">
+        <span class="error-message" id="nomor-error"></span>
+      </div>
+      <div class="form-group">
+        <label for="nominal">Nominal:</label>
+        <select id="nominal" name="nominal">
+          <option value="" disabled selected>Pilih Nominal</option>
+          <option value="PLN 5.000 Rp 7.000">Token PLN 5.000 Harga Rp 7.000</option>
+          <option value="PLN 10.000 Rp 12.000">Token PLN 10.000 Harga Rp 12.000</option>
+          <option value="PLN 15.000 Rp 17.000">Token PLN 15.000 Harga Rp 17.000</option>
+          <option value="PLN 20.000 Rp 22.000">Token PLN 20.000 Harga Rp 22.000</option>
+          <option value="PLN 50.000 Rp 52.000">Token PLN 50.000 Harga Rp 52.000</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="payment">Pembayaran:</label>
+        <select id="payment" name="payment">  
+          <option value="" disabled selected>Pilih Pembayaran</option>  
+          <option value="QRIS, (All Payment)">QRIS, (All Payment)</option>
+          <option value="DANA, 082264865477 A/N M****L">DANA, 082264865477 A/N M****L</option>
+          <option value="GOPAY, 082264865477 A/N M****L">GOPAY, 082264865477 A/N M****L</option>
+        </select>
+      </div>
+     <div class="form-group">      
+    <div id="nota-container">
+    <h2>Nota Pesanan</h2>
+        <p>Nomor Meter: <span id="nota-nomor"></span></p>
+        <p>Nominal: <span id="nota-nominal"></span></p>
+        <p>Pembayaran: <span id="nota-payment"></span></p>
+        <button type="submit" name="submit" class="btn btn-primary">Beli</button>
+        <small class="text-success">Silahkan lanjutkan pemesanan dengan mengklik tombol "Lanjutkan".</small>
+        </div>
+        <small class="text-success">Dengan membeli berarti anda telah menyetujui syarat & ketentuan layanan kami.</small>
+        <button id="nota-continue-btn" class="btn btn-primary" style="background-color: yellow;">Lanjutkan</button>
+  </form>
+</div>
+<script>
+  // Mendengarkan peristiwa submit form
+  document.getElementById("order-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Mencegah pengiriman form standar
+
+    // Menghapus pesan error sebelum validasi
+    document.getElementById("nomor-error").textContent = "";
+
+    // Mengambil nilai input
+    var nomor = document.getElementById("nomor").value;
+    var nominal = document.getElementById("nominal").value;
+    var payment = document.getElementById("payment").value;
+
+    // Memeriksa apakah semua data telah diisi
+    if (nomor === "" || nominal === "" || payment === "") {
+      document.getElementById("nomor-error").textContent = "Mohon lengkapi semua data.";
+      return;
+    }
+
+    // Menampilkan nota pesanan
+    document.getElementById("nota-nomor").textContent = nomor;
+    document.getElementById("nota-nominal").textContent = nominal;
+    document.getElementById("nota-payment").textContent = payment;
+    document.getElementById("nota-container").style.display = "block";
+  });
+
+  // Mendengarkan peristiwa klik tombol "Lanjutkan"
+  document.getElementById("nota-continue-btn").addEventListener("click", function() {
+    // Membangun URL WhatsApp dengan parameter yang diisi dari form
+    var nomor = document.getElementById("nomor").value;
+    var nominal = document.getElementById("nominal").value
+    var payment = document.getElementById("payment").value;
+
+    // Memeriksa apakah semua data telah diisi
+    if (nomor === "" || nominal === "" || payment === "") {
+      document.getElementById("nomor-error").textContent = "Mohon lengkapi semua data.";
+      return;
+    }
+
+    // Mengarahkan pengguna ke URL WhatsApp
+    var url = "https://wa.me/6282264865477?text=*Order%20Token%20PLN*%0A%0ANomor%20Meter%3A%20" +
+      encodeURIComponent(nomor) + "%0AProduk%3A%20" +
+      encodeURIComponent(nominal) + "%0APembayaran%3A%20" +
+      encodeURIComponent(payment);
+
+    window.location.href = url;
+  });
+</script>
+</body>
+</html>
